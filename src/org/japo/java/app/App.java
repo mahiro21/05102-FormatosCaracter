@@ -62,11 +62,11 @@ public final class App {
     public static void calcular(int linea, int n) {
         //Conversiones
         System.out.printf(" %2d ", linea);
-        String octa = "\'\\" + Integer.toOctalString(n) + "'";
+        String octa = n > 255 ? "---" : "\'\\" + Integer.toOctalString(n) + "'";
         System.out.printf("%-10s", octa);
         System.out.printf("(char)%-8d", n);
         String hex = String.format("\'\\" + "u".toLowerCase() + String.format(
-                "%04d", Integer.parseInt(Integer.toHexString(n),16)) + "'");
+                "%04d", Integer.parseInt(Integer.toHexString(n), 16)) + "'");
         System.out.printf("%-10s", hex);
         char c = (char) n;
         System.out.printf("\'%c\'%n", c);
